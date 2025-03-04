@@ -17,4 +17,35 @@
             Compartilhe este post por e-mail
         </a>
     </p>
+    
+    {% with comments.count as total_comments %}
+     <h2>
+        {{total_comments}} comentário{{total_comments|pluralize}}
+     </h2>        
+    {% endwith %}
+
+    
+    {% for comment in comments %}
+     <div class="comment">
+        <p class="info">
+            Comentario {{forloop.counter}} por {{comment.name}}
+            {{comment.created}}
+        </p>
+        {{comment.body|linebreaks}}
+     </div>
+     {% empty %}
+         <p>Ainda não existem comentários para este post.</p>        
+    {% endfor %}
+    
+    {% if new_comment %}
+        <h2>Seu comentario foi adicionado.</h2>
+        {% else %}
+            <h2>Adicione um novo comentario</h2>
+            <form method="post">
+                {{comment_form.as_p}}
+                {% csrf_token %}
+                <input type="submit" value="Adicionar Comentario">
+            </form>
+    {% endif %}
+                
 {% endblock  %}

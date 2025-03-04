@@ -16,6 +16,16 @@
     <div id="sidebar">
         <h2>Meu Blog</h2>
         <p>Este é meu blog. Eu escrevi {% total_posts %} postagens até agora.</p>
+        <h3>Ultimas postagens</h3>
+        {% show_latest_posts 3 %}
+        <h3>Postagens mais comentadas</h3>
+        {% get_most_commented_posts 3 as most_commented_posts %}
+        <ul>
+            {% for post in most_commented_posts %}
+                <li>
+                    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                </li>
+            {% endfor %}
     </div>
 </body>
 </html>

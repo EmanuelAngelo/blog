@@ -14,7 +14,9 @@
     {% endblock %}
     </div>
     <div id="sidebar">
-        <h2>Meu Blog</h2>
+        <a href="{% url 'blog:post_list' %}">
+            <h2>Meu Blog</h2>
+        </a>
         <p>Este é meu blog. Eu escrevi {% total_posts %} postagens até agora.</p>
         <h3>Ultimas postagens</h3>
         {% show_latest_posts 3 %}

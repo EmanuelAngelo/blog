@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Post
+from .models import Post, Comment
+from .forms import EmailPostForm, CommentForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 from .forms import EmailPostForm
@@ -52,4 +53,20 @@ def post_list(request):
 
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post, status='published', publish__year=year, publish__month=month, publish__day=day)
-    return render(request, 'blog/post/detail.html', {'post': post})
+    # Lista de comentarios ativos para esta postagem
+    comments = post.comments.filter(active=True)
+    new_comment = None
+    
+    if request.method == 'POST':
+        # Um comentario foi postado
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            # Cria um objeto Comment mas nao o salva no banco de dados ainda
+            new_comment = comment_form.save(commit=False)
+            # Atribui a postagem atual ao comentario
+            new_comment.post = post
+            # Salva o comentario no banco de dados
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+    return render(request, 'blog/post/detail.html', {'post': post, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form})

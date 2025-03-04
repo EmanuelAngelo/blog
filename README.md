@@ -1,71 +1,71 @@
-# Django Blog Application
+# Aplicação de Blog em Django
 
-This is a Django-based web application for creating and managing a blog. The application allows users to create, edit, and delete blog posts, as well as view a list of all posts and individual post details.
+Esta é uma aplicação web baseada em Django para criar e gerenciar um blog. A aplicação permite que os usuários criem, editem e excluam postagens de blog, além de visualizar uma lista de todas as postagens e detalhes de postagens individuais.
 
-## Features
+## Funcionalidades
 
-- User authentication (registration, login, logout)
-- Create, edit, and delete blog posts
-- View a list of all blog posts
-- View individual blog post details
-- Responsive design for mobile and desktop
+- Autenticação de usuário (registro, login, logout)
+- Criar, editar e excluir postagens de blog
+- Visualizar uma lista de todas as postagens de blog
+- Visualizar detalhes de postagens individuais
+- Design responsivo para dispositivos móveis e desktop
 
-## Installation
+## Instalação
 
-1. Clone the repository:
+1. Clone o repositório:
     ```bash
     git clone https://github.com/yourusername/django-blog.git
     cd django-blog
     ```
 
-2. Create a virtual environment and activate it:
+2. Crie um ambiente virtual e ative-o:
     ```bash
     python3 -m venv venv
     source venv/bin/activate
     ```
 
-3. Install the required dependencies:
+3. Instale as dependências necessárias:
     ```bash
     pip install -r requirements.txt
     ```
 
-4. Apply the database migrations:
+4. Aplique as migrações do banco de dados:
     ```bash
     python manage.py migrate
     ```
 
-5. Create a superuser to access the Django admin:
+5. Crie um superusuário para acessar o admin do Django:
     ```bash
     python manage.py createsuperuser
     ```
 
-6. Run the development server:
+6. Execute o servidor de desenvolvimento:
     ```bash
     python manage.py runserver
     ```
 
-7. Open your web browser and go to `http://127.0.0.1:8000/` to see the application in action.
+7. Abra seu navegador web e vá para `http://127.0.0.1:8000/` para ver a aplicação em ação.
 
-## Usage
+## Uso
 
-- To create a new blog post, log in with your user account and navigate to the "New Post" page.
-- To edit or delete a blog post, navigate to the post's detail page and use the provided options.
-- To view all blog posts, go to the home page.
+- Para criar uma nova postagem de blog, faça login com sua conta de usuário e navegue até a página "Nova Postagem".
+- Para editar ou excluir uma postagem de blog, navegue até a página de detalhes da postagem e use as opções fornecidas.
+- Para visualizar todas as postagens de blog, vá para a página inicial.
 
-## Contributing
+## Contribuindo
 
-If you would like to contribute to this project, please follow these steps:
+Se você gostaria de contribuir para este projeto, por favor siga estes passos:
 
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Make your changes and commit them with descriptive messages.
-4. Push your changes to your fork.
-5. Create a pull request to the main repository.
+1. Faça um fork do repositório.
+2. Crie um novo branch para sua funcionalidade ou correção de bug.
+3. Faça suas alterações e comite-as com mensagens descritivas.
+4. Faça push das suas alterações para o seu fork.
+5. Crie um pull request para o repositório principal.
 
-## License
+## Licença
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-## Contact
+## Contato
 
-If you have any questions or feedback, please feel free to contact me at [your-email@example.com].
+Se você tiver alguma dúvida ou feedback, por favor sinta-se à vontade para me contatar em [emanuelangelo@outlook.com.br].
